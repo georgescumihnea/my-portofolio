@@ -94,11 +94,27 @@ export async function POST(request: Request) {
 // Function to verify hCaptcha token
 async function verifyHCaptcha(token: string): Promise<boolean> {
   const secret = process.env.HCAPTCHA_SECRET_KEY;
-  const verificationURL = `https://hcaptcha.com/siteverify?secret=${secret}&response=${token}`;
+
+  if (!secret) {
+    console.error("hCaptcha secret key is missing.");
+    return false;
+  }
 
   try {
-    const res = await fetch(verificationURL, { method: "POST" });
-    const data = await res.json();
+    const verificationURL = `https://hcaptcha.com/siteverify`;
+    const response = await fetch(verificationURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        secret,
+        response: token,
+      }),
+    });
+
+    const data = await response.json();
+    console.log("hCaptcha verification response:", data);
     return data.success;
   } catch (error) {
     console.error("Error verifying hCaptcha:", error);
