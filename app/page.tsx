@@ -1,101 +1,147 @@
-import Image from "next/image";
+// app/page.tsx
+"use client";
 
-export default function Home() {
+import { motion, useReducedMotion } from "framer-motion";
+import Curve from "@/components/Curve";
+import { Header } from "@/components/Header";
+import { SpotlightCard } from "@/components/Spotlight";
+import { WelcomeCard } from "@/components/WelcomeCard";
+import { AboutMeCard } from "@/components/AboutMeCard";
+import { CvCard } from "@/components/CvCard";
+import { NowCard } from "@/components/NowCard";
+import { PortfolioProjectsCard } from "@/components/PortofolioProjectsCard";
+import { TimeZoneCard } from "@/components/TimeZoneCard";
+import { ContactCard } from "@/components/ContactCard";
+import { ExperienceCard } from "@/components/ExperienceCard";
+import { QuoteCard } from "@/components/QuoteCard";
+import { LanguagesCard } from "@/components/LanguagesCard";
+import { ContactFormCard } from "@/components/ContactFormCard";
+
+export default function Page() {
+  // Check if user prefers reduced motion
+  const shouldReduceMotion = useReducedMotion();
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: shouldReduceMotion
+        ? { when: "afterChildren" }
+        : { staggerChildren: 0.2 },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+      },
+    },
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Curve>
+      <div className="min-h-screen bg-gray-100 dark:bg-gray-800 p-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Header />
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-6 gap-4"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Welcome Card */}
+            <motion.div variants={cardVariants} className="md:col-span-4">
+              <SpotlightCard className="shadow-lg h-full">
+                <WelcomeCard />
+              </SpotlightCard>
+            </motion.div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {/* About Me Card */}
+            <motion.div variants={cardVariants} className="md:col-span-2">
+              <SpotlightCard className="shadow-lg h-full">
+                <AboutMeCard />
+              </SpotlightCard>
+            </motion.div>
+
+            {/* Portfolio & Projects Card */}
+            <motion.div variants={cardVariants} className="md:col-span-4">
+              <SpotlightCard className="shadow-lg h-full">
+                <PortfolioProjectsCard />
+              </SpotlightCard>
+            </motion.div>
+
+            {/* New 2x2 Grid for CV, Now, Study, and Experience */}
+            <motion.div variants={cardVariants} className="md:col-span-2">
+              <div className="grid grid-cols-2 gap-4 h-full w-full">
+                {/* CV Card */}
+                <motion.div variants={cardVariants}>
+                  <SpotlightCard className="shadow-lg h-full">
+                    <CvCard />
+                  </SpotlightCard>
+                </motion.div>
+                {/* Now Card */}
+                <motion.div variants={cardVariants}>
+                  <SpotlightCard className="shadow-lg h-full">
+                    <NowCard />
+                  </SpotlightCard>
+                </motion.div>
+                {/* Experience Card */}
+                <motion.div variants={cardVariants}>
+                  <SpotlightCard className="shadow-lg h-full">
+                    <ExperienceCard />
+                  </SpotlightCard>
+                </motion.div>
+                {/* SkillCard (ProgramminLanguages) */}
+                <motion.div variants={cardVariants}>
+                  <SpotlightCard className="shadow-lg h-full">
+                    <LanguagesCard />
+                  </SpotlightCard>
+                </motion.div>
+                {/* Time Zone Card */}
+                <motion.div variants={cardVariants} className="col-span-2">
+                  <SpotlightCard className="shadow-lg h-full">
+                    <TimeZoneCard />
+                  </SpotlightCard>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Quote Card */}
+            <motion.div variants={cardVariants} className="md:col-span-3">
+              <SpotlightCard className="shadow-lg h-full">
+                <QuoteCard />
+              </SpotlightCard>
+            </motion.div>
+
+            {/* Contact Card */}
+            <motion.div variants={cardVariants} className="md:col-span-3">
+              <SpotlightCard className="shadow-lg h-full">
+                <ContactCard />
+              </SpotlightCard>
+            </motion.div>
+
+            {/* Instagram Tattoo Card */}
+            <motion.div variants={cardVariants} className="md:col-span-6">
+              <SpotlightCard className="shadow-lg h-full">
+                <ContactFormCard />
+              </SpotlightCard>
+            </motion.div>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </Curve>
   );
 }
