@@ -23,15 +23,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Validate email format (simple regex)
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { success: false, message: "Invalid email address." },
-        { status: 400 }
-      );
-    }
-
     // Verify hCaptcha Token
     const isCaptchaValid = await verifyHCaptcha(hCaptchaToken);
     if (!isCaptchaValid) {
@@ -48,9 +39,6 @@ export async function POST(request: Request) {
       email,
       message,
     };
-
-    // Debugging: Log the payload to verify 'access_key' is included
-    console.log("Submitting to Web3Forms with payload:", payload);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -101,8 +89,7 @@ async function verifyHCaptcha(token: string): Promise<boolean> {
   }
 
   try {
-    const verificationURL = `https://hcaptcha.com/siteverify`;
-    const response = await fetch(verificationURL, {
+    const response = await fetch("https://hcaptcha.com/siteverify", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
