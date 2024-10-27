@@ -11,13 +11,6 @@ import {
   translate as translateVariants,
 } from "./anim";
 
-const routes = {
-  "/": "Home",
-  "/about": "About",
-  "/contact": "Contact",
-  // Add other routes as needed
-};
-
 const anim = (variants: any) => ({
   variants,
   initial: "initial",
@@ -70,7 +63,7 @@ export default function Curve({ children }: { children: React.ReactNode }) {
         {...anim(textVariants)}
         onAnimationComplete={handleAnimationComplete}
       >
-        {routes[pathname] || "Welcome"}
+        {"Welcome"}
       </motion.p>
       {dimensions.width != null && <SVG {...dimensions} />}
     </div>
