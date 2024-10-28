@@ -18,7 +18,10 @@ export function ContactCard() {
         <div>
           <h3 className="font-semibold">Find me on</h3>
           <ul className="space-y-1 flex flex-col">
-            <Link href="https://www.linkedin.com/in/georgescu-mihnea-066885206/">
+            <Link
+              href="https://www.linkedin.com/in/georgescu-mihnea-066885206/"
+              className="hover:text-red-500 hover:underline"
+            >
               LinkedIn
             </Link>
             <Link href="https://github.com/georgescumihnea">GitHub</Link>
