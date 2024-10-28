@@ -24,7 +24,10 @@ export function ContactCard() {
             >
               LinkedIn
             </Link>
-            <Link href="https://github.com/georgescumihnea hover:text-red-500 hover:underline">
+            <Link
+              href="https://github.com/georgescumihnea"
+              className="hover:text-red-500 hover:underline"
+            >
               GitHub
             </Link>
           </ul>
