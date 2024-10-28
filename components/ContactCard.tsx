@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 export function ContactCard() {
   return (
@@ -11,15 +12,16 @@ export function ContactCard() {
       <CardContent className="space-y-4">
         <div>
           <h3 className="font-semibold">Contact Details</h3>
-          <p>camiloplaza3@gmail.com</p>
-          <p>Bogotá D.C, Colombia</p>
+          <p>mihtitan@gmail.com</p>
+          <p>Bucharest, Romania</p>
         </div>
         <div>
-          <h3 className="font-semibold">Socials</h3>
-          <ul className="space-y-1">
-            <li>LinkedIn</li>
-            <li>GitHub</li>
-            <li>Instagram</li>
+          <h3 className="font-semibold">Find me on</h3>
+          <ul className="space-y-1 flex flex-col">
+            <Link href="https://www.linkedin.com/in/georgescu-mihnea-066885206/">
+              LinkedIn
+            </Link>
+            <Link href="https://github.com/georgescumihnea">GitHub</Link>
           </ul>
         </div>
       </CardContent>

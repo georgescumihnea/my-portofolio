@@ -32,7 +32,6 @@ export function PortfolioProjectsCard() {
     <div>
       <CardHeader className="flex flex-row items-center justify-between">
         <h2 className="text-xl font-bold">Portfolio & Projects</h2>
-        <ExternalLink className="h-4 w-4" />
       </CardHeader>
       <CardContent>
         {projects.map((project, index) => (

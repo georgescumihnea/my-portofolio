@@ -183,7 +183,6 @@ export function ContactFormCard() {
         <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
           Contact Me
         </h2>
-        <ExternalLink className="h-4 w-4 text-gray-600 dark:text-gray-400" />
       </CardHeader>
       <CardContent className="space-y-4">
         <form onSubmit={handleSubmit} className="space-y-4">

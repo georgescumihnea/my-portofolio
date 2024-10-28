@@ -69,7 +69,7 @@ export function TimeZoneCard() {
     } else if (weatherCode === 1 || weatherCode === 2) {
       return "/mainlyclear.svg"; // Mainly clear, Partly cloudy
     } else if (weatherCode === 3) {
-      return "/window.svg"; // Overcast
+      return "/fog.svg"; // Overcast
     } else if (weatherCode === 45 || weatherCode === 48) {
       return "/fog.svg"; // Fog
     } else if (
@@ -102,9 +102,9 @@ export function TimeZoneCard() {
     } else {
       // For the rest, use the existing icons
       if (weatherCode >= 80 && weatherCode <= 82) {
-        return "/weather-icons/animated/rainy-3.svg"; // Rain showers
+        return "🌧️"; // Rain showers
       } else {
-        return "/weather-icons/animated/weather.svg"; // Default icon
+        return "🌄"; // Default icon
       }
     }
   };

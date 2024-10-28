@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ThumbsDown, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function WelcomeCard() {
   return (
@@ -28,27 +29,28 @@ export function WelcomeCard() {
       <CardFooter className="flex justify-between items-end p-4 sm:p-6">
         {/* Icons */}
         <div className="flex space-x-4">
-          <Button
-            size="icon"
-            variant="secondary"
-            className="rounded-full bg-red-500 hover:bg-red-600"
+          <Link
+            href="https://www.linkedin.com/in/georgescu-mihnea-066885206/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <ThumbsDown className="h-4 w-4 text-white" />
-          </Button>
-          <Button
-            size="icon"
-            variant="secondary"
-            className="rounded-full bg-red-500 hover:bg-red-600"
-          >
-            <Linkedin className="h-4 w-4 text-white" />
-          </Button>
-          <Button
-            size="icon"
-            variant="secondary"
-            className="rounded-full bg-red-500 hover:bg-red-600"
-          >
-            <Mail className="h-4 w-4 text-white" />
-          </Button>
+            <Button
+              size="icon"
+              variant="secondary"
+              className="rounded-full bg-red-500 hover:bg-red-600"
+            >
+              <Linkedin className="h-4 w-4 text-white" />
+            </Button>
+          </Link>
+          <Link href="mailto:mihtitan@gmail.com">
+            <Button
+              size="icon"
+              variant="secondary"
+              className="rounded-full bg-red-500 hover:bg-red-600"
+            >
+              <Mail className="h-4 w-4 text-white" />
+            </Button>
+          </Link>
         </div>
 
         {/* Image with Hover Effect */}
