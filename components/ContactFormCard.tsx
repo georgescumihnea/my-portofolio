@@ -178,7 +178,7 @@ export function ContactFormCard() {
   };
 
   return (
-    <Card className="max-w-md mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+    <Card className="bg-white dark:bg-gray-900 shadow-lg rounded-lg">
       <CardHeader className="flex flex-row items-center justify-between">
         <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
           Contact Me
@@ -201,7 +201,7 @@ export function ContactFormCard() {
               id="name"
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:text-white"
+              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-red-500 focus:ring-red-500 dark:bg-gray-700 dark:text-white p-2"
               placeholder="Your Name"
               required
             />
@@ -221,7 +221,7 @@ export function ContactFormCard() {
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:text-white"
+              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-red-500 focus:ring-red-500 dark:bg-gray-700 dark:text-white p-2"
               placeholder="you@example.com"
               required
             />
@@ -241,7 +241,7 @@ export function ContactFormCard() {
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:text-white"
+              className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-red-500 focus:ring-red-500 dark:bg-gray-700 dark:text-white p-2"
               placeholder="Your message..."
               required
             ></textarea>
@@ -257,9 +257,9 @@ export function ContactFormCard() {
               disabled={status.loading}
               className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
                 status.loading
-                  ? "bg-indigo-300 cursor-not-allowed"
-                  : "bg-indigo-600 hover:bg-indigo-700"
-              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                  ? "bg-red-300 cursor-not-allowed"
+                  : "bg-red-600 hover:bg-red-700"
+              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500`}
             >
               {status.loading ? "Sending..." : "Send Message"}
             </button>
