@@ -20,43 +20,49 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
 export const metadata: Metadata = {
   // The title of your website
-  title: "Georgescu Mihnea's Personal Portofolio",
+  title: "Georgescu Mihnea | Web Developer Portfolio",
   // A brief description of your website for SEO purposes
-  description: "A brief description of your website for SEO purposes.",
+  description:
+    "I'm Georgescu Mihnea, a passionate web developer creating websites that convert visitors into customers. Explore my portfolio of Next.js, Node.js, and React projects.",
   // Keywords relevant to your website content
-  keywords: ["web developer", "portfolio", "javascript", "react", "next.js"],
+  keywords: [
+    "Georgescu Mihnea",
+    "web developer",
+    "portfolio",
+    "Next.js",
+    "React",
+    "Node.js",
+    "JavaScript",
+    "TailwindCSS",
+    "sales-focused websites",
+  ],
   // The name and URL of the website author
-  authors: [{ name: "Georgescu Mihnea", url: "https://yourwebsite.com" }],
+  authors: [
+    {
+      name: "Georgescu Mihnea",
+      url: "https://my-portofolio-georgescumihneas-projects.vercel.app",
+    },
+  ],
   // The name of the creator (you)
   creator: "Georgescu Mihnea",
   // Open Graph meta tags for social media sharing
   openGraph: {
-    title: "Your Website Title",
-    description: "A brief description of your website for SEO purposes.",
-    url: "https://yourwebsite.com", // Replace with your website's URL
-    siteName: "Your Website Name",
-    images: [
-      {
-        url: "https://yourwebsite.com/og-image.jpg", // Replace with your Open Graph image URL
-        width: 1200,
-        height: 630,
-        alt: "An illustrative image representing your website",
-        type: "image/jpeg",
-      },
-    ],
+    title: "Georgescu Mihnea | Web Developer Portfolio",
+    description:
+      "Explore the work of Georgescu Mihnea, a web developer creating effective, sales-driven websites. Check out projects in Next.js, Node.js, and more.",
+    url: "https://my-portofolio-georgescumihneas-projects.vercel.app",
+    siteName: "Georgescu Mihnea Portfolio",
     locale: "en_US",
     type: "website",
   },
   // Twitter Card meta tags for Twitter sharing
   twitter: {
     card: "summary_large_image",
-    title: "Your Website Title",
-    description: "A brief description of your website for SEO purposes.",
-    images: ["https://yourwebsite.com/twitter-image.jpg"], // Replace with your Twitter card image URL
-    creator: "@yourtwitterhandle", // Replace with your Twitter handle
+    title: "Georgescu Mihnea | Web Developer Portfolio",
+    description:
+      "I'm Georgescu Mihnea, a web developer specializing in creating websites that convert. View my portfolio of projects in Next.js, React, and Node.js.",
   },
   // Meta tags for search engine robots
   robots: {
@@ -74,9 +80,10 @@ export const metadata: Metadata = {
   },
   // The canonical URL of your website
   alternates: {
-    canonical: "https://yourwebsite.com",
+    canonical: "https://my-portofolio-georgescumihneas-projects.vercel.app",
     languages: {
-      "en-US": "https://yourwebsite.com/en-US",
+      "en-US":
+        "https://my-portofolio-georgescumihneas-projects.vercel.app/en-US",
       // Add other languages if your site is multilingual
     },
   },

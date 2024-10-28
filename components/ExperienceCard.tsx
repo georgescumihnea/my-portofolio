@@ -13,7 +13,7 @@ export function ExperienceCard() {
         <div>
           <h3 className="font-semibold">Romanian American University</h3>
           <p className="text-red-500">
-            Bachelor's in Computer Science & Business
+            Bachelor's in Computer Science for Economics
           </p>
           <p className="text-sm text-muted-foreground">2021 - 2024</p>
         </div>

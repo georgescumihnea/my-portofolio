@@ -48,7 +48,7 @@ export default function Page() {
   return (
     <Curve>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-800 p-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto max-w-[90%]">
           <motion.div
             variants={cardVariants}
             initial="hidden"
