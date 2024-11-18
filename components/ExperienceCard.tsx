@@ -17,11 +17,6 @@ export function ExperienceCard() {
           </p>
           <p className="text-sm text-muted-foreground">2021 - 2024</p>
         </div>
-        <div>
-          <h3 className="font-semibold">Romanian American University</h3>
-          <p className="text-red-500">Masters Program</p>
-          <p className="text-sm text-muted-foreground">I will start in 2025.</p>
-        </div>
       </CardContent>
     </>
   );
