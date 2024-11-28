@@ -20,7 +20,7 @@ export function CvCard() {
           View and download my resume by clicking on the button below.
         </p>
       </CardContent>
-      <div className="px-6">
+      <div className="px-6 py-4">
         <a href="/resume.pdf" download className="w-full">
           <Button className="w-full bg-red-500 hover:bg-red-600 text-white rounded-sm text-pretty">
             Download Resume <Download className="h-4 w-4" />

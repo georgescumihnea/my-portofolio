@@ -85,33 +85,36 @@ export default function Page() {
 
             {/* New 2x2 Grid for CV, Now, Study, and Experience */}
             <motion.div variants={cardVariants} className="md:col-span-2">
-              <div className="grid grid-cols-2 gap-4 h-full w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full w-full">
                 {/* CV Card */}
-                <motion.div variants={cardVariants}>
+                <motion.div variants={cardVariants} className="col-span-1">
                   <SpotlightCard className="shadow-lg h-full">
                     <CvCard />
                   </SpotlightCard>
                 </motion.div>
                 {/* Now Card */}
-                <motion.div variants={cardVariants}>
+                <motion.div variants={cardVariants} className="col-span-1">
                   <SpotlightCard className="shadow-lg h-full">
                     <NowCard />
                   </SpotlightCard>
                 </motion.div>
                 {/* Experience Card */}
-                <motion.div variants={cardVariants}>
+                <motion.div variants={cardVariants} className="col-span-1">
                   <SpotlightCard className="shadow-lg h-full">
                     <ExperienceCard />
                   </SpotlightCard>
                 </motion.div>
                 {/* SkillCard (ProgramminLanguages) */}
-                <motion.div variants={cardVariants}>
+                <motion.div variants={cardVariants} className="col-span-1">
                   <SpotlightCard className="shadow-lg h-full">
                     <LanguagesCard />
                   </SpotlightCard>
                 </motion.div>
                 {/* Time Zone Card */}
-                <motion.div variants={cardVariants} className="col-span-2">
+                <motion.div
+                  variants={cardVariants}
+                  className="col-span-1 md:col-span-2"
+                >
                   <SpotlightCard className="shadow-lg h-full">
                     <TimeZoneCard />
                   </SpotlightCard>
